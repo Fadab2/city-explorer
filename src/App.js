@@ -9,7 +9,8 @@ export default class App extends Component {
     this.state = {
       cityValue: '',
       urlMap: '',
-      location: []
+      location: [],
+      error: false
 
     }
   }
@@ -25,10 +26,10 @@ export default class App extends Component {
     try {
       let response = await axios.get(urlUs);
       console.log(response.data[0])
-      this.setState({ location: response.data[0] })
+      this.setState({ location: response.data[0], error: false })
       this.mapGeturl()
     } catch (e) {
-      this.setState({ error: true })
+      this.setState({ error: true, location: [] })
 
     }
   }
@@ -41,7 +42,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <CityForm getLocation={this.getLocation} handleChange={this.handleChange} />
+        <CityForm getLocation={this.getLocation} handleChange={this.handleChange} error={this.state.error} />
         {this.state.location && <CityDisplay location={this.state.location} map={this.state.urlMap} />}
 
       </div>

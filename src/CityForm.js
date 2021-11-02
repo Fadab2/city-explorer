@@ -24,6 +24,7 @@ export default class CityForm extends Component {
                         <Form.Label>Enter a city to search</Form.Label>
                         <Form.Control onChange={this.props.handleChange} type="text" />
                     </Form.Group>
+                    {this.props.error && <h1>Error, please enter a valid city</h1>}
                     <Button variant="primary" type="submit">Explore!</Button>
                 </Form>
             </div>
