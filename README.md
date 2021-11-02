@@ -2,6 +2,8 @@
 **Version**: 0.1.0 
 
 ## Overview
+
+A user enters a city name in US or Europe and gets back a map and latitude of that specific city.
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
 ## Getting Started
