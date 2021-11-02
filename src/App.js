@@ -1,38 +1,49 @@
 import React, { Component } from 'react'
+import CityDisplay from './CityDisplay'
+import CityForm from './CityForm'
 import axios from 'axios'
-//import Button from 'react-bootstrap/Button';
-
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      cityValue: ''
+      cityValue: '',
+      urlMap: '',
+      location: []
 
     }
   }
 
-  handleClick = async () => {
-    const urlUs = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.cityValue}&format=json`;
-
-    //const urlEu = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.cityValue}&format=json`;
-
-    let response = await axios.get(urlUs);
-    this.setState({ location: response.data[0] });
-    console.log(response.data[0])
-  }
-
   handleChange = (e) => {
     this.setState({ cityValue: e.target.value })
+
   }
+
+
+  getLocation = async () => {
+    const urlUs = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.cityValue}&format=json`;
+    try {
+      let response = await axios.get(urlUs);
+      console.log(response.data[0])
+      this.setState({ location: response.data[0] })
+      this.mapGeturl()
+    } catch (e) {
+      this.setState({ error: true })
+
+    }
+  }
+
+  mapGeturl = () => {
+    const urlMap = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12&size=600x600&format=png`;
+    this.setState({ urlMap })
+  }
+
   render() {
     return (
       <div>
-        <h1>Explorer Cities </h1>
-        <input onChange={this.handleChange} value={this.state.cityValue} />
-        <p>{this.state.cityValue}</p>
-        <button onClick={this.handleClick}>Explore!</button>
-        {this.state.location && <h1>{this.state.location.display_name} Lat: {this.state.location.lat} Lon: {this.state.location.lon}</h1>}
+        <CityForm getLocation={this.getLocation} handleChange={this.handleChange} />
+        {this.state.location && <CityDisplay location={this.state.location} map={this.state.urlMap} />}
+
       </div>
     )
   }
