@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class CityDisplay extends Component {
     render() {
         return (
             <div>
-                <Card style={{ width: '18rem' }}>
+                <Card style={{ width: '40rem' }}>
                     <Card.Img variant="top" src={this.props.map} />
                     <Card.Body>
                         <Card.Title>{this.props.location.display_name}</Card.Title>

@@ -2,20 +2,49 @@
 **Version**: 0.1.0 
 
 ## Overview
-
-A user enters a city name in US or Europe and gets back a map and latitude of that specific city.
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+The app displays information a bout a city location that a user searched for. 
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+A user enters a city name as a search input using an api the app displays the latitude, longitude and the map of that city.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+The app uses `React`, `Cards`, `Forms`, `React Bootstrap`, `axios`
+![](src/Lab-06%20WRRC%20Diagram.png)
 
 ## Change Log
+
+11-02-2021 5:14 application is fully functional locally, but getting errors from netlify.
+
+Name of feature: Setting up the app/repo
+ - Estimate of time needed to complete: 2hrs
+- Start time: 3:00 PM
+- Finish time: 5:00PM
+- Actual time needed to complete: 1.3hrs
+  
+Name of feature: Locations 
+- Estimate of time needed to complete: 2hrs
+- Start time: 5:00 PM
+- 	Finish time: 6:30 PM
+- 	Actual time needed to complete: 1.5hrs
+  
+Name of feature: Map display
+
+- 	Estimate of time needed to complete: 3 hour
+- Start time: 2:00 PM
+- Finish time: 4:30 PM
+- Actual time needed to complete: 2.5hrs
+
+Name of feature: Errors:
+- Estimate of time needed to complete: 30 minutes	
+- Start time: 4:30 PM
+- Finish time: 5:30 PM
+- Actual time needed to complete: 1hr 
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
+
+Collaborated with Ryan Hoffman on diagram.
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
