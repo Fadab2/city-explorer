@@ -29,7 +29,6 @@ export default class App extends Component {
       this.mapGeturl()
     } catch (e) {
       this.setState({ error: true, location: [] })
-
     }
   }
 
