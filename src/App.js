@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CityDisplay from './CityDisplay'
 import CityForm from './CityForm'
+import Weather from './Weather'
 import axios from 'axios'
 
 export default class App extends Component {
@@ -9,7 +10,7 @@ export default class App extends Component {
     this.state = {
       cityValue: '',
       urlMap: '',
-      location: [],
+      location: null,
       error: false
 
     }
@@ -17,9 +18,7 @@ export default class App extends Component {
 
   handleChange = (e) => {
     this.setState({ cityValue: e.target.value })
-
   }
-
 
   getLocation = async () => {
     const urlUs = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.cityValue}&format=json`;
@@ -44,7 +43,7 @@ export default class App extends Component {
       <div>
         <CityForm getLocation={this.getLocation} handleChange={this.handleChange} error={this.state.error} />
         {this.state.location && <CityDisplay location={this.state.location} map={this.state.urlMap} />}
-
+        {this.state.location && <Weather location={this.state.location} city={this.state.cityValue} />}
       </div>
     )
   }
