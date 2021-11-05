@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CityDisplay from './CityDisplay'
 import CityForm from './CityForm'
 import Weather from './Weather'
+import Movie from './movies'
 import axios from 'axios'
 
 export default class App extends Component {
@@ -10,7 +11,7 @@ export default class App extends Component {
     this.state = {
       cityValue: '',
       urlMap: '',
-      location: null,
+      location: '',
       error: false
 
     }
@@ -25,8 +26,7 @@ export default class App extends Component {
     try {
       let response = await axios.get(urlUs);
       console.log(response.data[0])
-      this.setState({ location: response.data[0], error: false })
-      this.mapGeturl()
+      this.setState({ location: response.data[0] }, this.mapGeturl)
     } catch (e) {
       this.setState({ error: true, location: [] })
     }
@@ -43,6 +43,7 @@ export default class App extends Component {
         <CityForm getLocation={this.getLocation} handleChange={this.handleChange} error={this.state.error} />
         {this.state.location && <CityDisplay location={this.state.location} map={this.state.urlMap} />}
         {this.state.location && <Weather location={this.state.location} city={this.state.cityValue} />}
+        {this.state.location && <Movie city={this.state.cityValue} />}
       </div>
     )
   }
