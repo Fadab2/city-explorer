@@ -23,7 +23,7 @@ export default class Movie extends Component {
         return (
             <div>
                 <Button onClick={this.getMovie} variant="primary" type="submit" >Movies!</Button>
-                {this.state.movieList.length > 0 && this.state.movieList.map((movieInfo, idx) => <li key={idx}><p style={{color: "blue"}}> movie title:{movieInfo.title} </p> <p> movie description:{movieInfo.description}</p> </li>)};
+                {this.state.movieList.length > 0 && this.state.movieList.map((movieInfo, idx) => <li key={idx}><p style={{color: "blue"}}> movie title: {movieInfo.title} </p> <p> movie description: {movieInfo.description}</p> </li>)};
 
                 {/* date: movieInfo.release description: movieInfo.description */}
 
