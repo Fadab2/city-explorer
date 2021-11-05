@@ -8,8 +8,13 @@ The app displays information a bout a city location that a user searched for.
 A user enters a city name as a search input using an api the app displays the latitude, longitude and the map of that city.
 
 ## Architecture
+
+
 The app uses `React`, `Cards`, `Forms`, `React Bootstrap`, `axios`
+
 ![](src/Lab-06%20WRRC%20Diagram.png)
+## Credit and Collaborations
+Ryan Hoffman
 
 ## Change Log
 
@@ -40,11 +45,25 @@ Name of feature: Errors:
 - Finish time: 5:30 PM
 - Actual time needed to complete: 1hr 
 
+Name of feature: weather:
+- Estimate of time needed to complete: 1hr	
+- Start time: 1:00 PM
+- Finish time: 3:00 PM
+- Actual time needed to complete: 2hrs 
+
+Name of feature: Back-end API:
+- Estimate of time needed to complete: 1.5hrs	
+- Start time: 3:00 PM
+- Finish time: 5:00 PM
+- Actual time needed to complete: 2hrs 
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-## Credit and Collaborations
 
-Collaborated with Ryan Hoffman on diagram.
+## Credit and Collaborations
+Collaborated with [ K'Lan Stovall](https://github.com/KSTOV) data flow diagram.
+
+![data flow diagram](src/lab7diagram.png)
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
