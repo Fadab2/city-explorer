@@ -1,20 +1,21 @@
 **Author**: Edris Berg
-**Version**: 0.1.0 
+**Version**: 1.0.9 
 
 ## Overview
-The app displays information a bout a city location that a user searched for. 
+Users can search for a specific city. City information, latitude, longitude and along with a map will be displayed. The user then can retrieve weather and movies related to that city.
 
 ## Getting Started
-A user enters a city name as a search input using an api the app displays the latitude, longitude and the map of that city.
+A user enters a city name as a search input using an api the app displays the latitude, longitude, map, weather and movies.
 
 ## Architecture
 
-
-The app uses `React`, `Cards`, `Forms`, `React Bootstrap`, `axios`
+The app uses `React`, `Cards`, `Forms`, `React Bootstrap`, `axios` `APIs`
 
 ![](src/Lab-06%20WRRC%20Diagram.png)
+![data flow diagram](src/lab7diagram.png)
+![](src/lab09-diagram.PNG)
 ## Credit and Collaborations
-Ryan Hoffman
+
 
 ## Change Log
 
@@ -64,6 +65,7 @@ Name of feature: Back-end API:
 
 ## Credit and Collaborations
 Collaborated with [ K'Lan Stovall](https://github.com/KSTOV) data flow diagram.
+Collaborated with [Jordan Folk](https://github.com/folksmash) on data flaw diagram.
+Collaborated with Ryan Hoffman on data flaw diagram.
 
-![data flow diagram](src/lab7diagram.png)
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
