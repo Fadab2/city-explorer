@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CityDisplay from './CityDisplay'
 import CityForm from './CityForm'
 import Weather from './Weather'
-import Movie from './movies'
+import Movie from './Movies'
 import axios from 'axios'
 
 export default class App extends Component {
@@ -39,7 +39,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div class="container border border-secondary">
         <CityForm getLocation={this.getLocation} handleChange={this.handleChange} error={this.state.error} />
         {this.state.location && <CityDisplay location={this.state.location} map={this.state.urlMap} />}
         {this.state.location && <Weather location={this.state.location} city={this.state.cityValue} />}

@@ -10,7 +10,6 @@ export default class CityForm extends Component {
             cityValue: ''
         }
     }
-
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.getLocation()
@@ -18,14 +17,14 @@ export default class CityForm extends Component {
 
     render() {
         return (
-            <div>
+            <div class="container font-size-lg">
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group className="mb-3" controlId="city">
-                        <Form.Label>Enter a city to search</Form.Label>
+                        <Form.Label><h1>Enter a city to search</h1></Form.Label>
                         <Form.Control onChange={this.props.handleChange} type="text" />
                     </Form.Group>
                     {this.props.error && <h1>Error, please enter a valid city</h1>}
-                    <Button variant="primary" type="submit">Explore!</Button>
+                    <Button class="button-primary" variant="primary" type="submit">Explore!</Button>
                 </Form>
             </div>
         )
