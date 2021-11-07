@@ -23,9 +23,12 @@ export default class Weather extends Component {
 
     render() {
         return (
-            <div>
+            <div class="container ">
                 <Button onClick={this.getWeather} variant="primary" type="submit" >Weather!</Button>
-                {this.state.weatherForcast.length > 0 && this.state.weatherForcast.map((weatherInfo, idx) => <WeatherDay idx={idx} weatherInfo={weatherInfo} />)};
+                <ul class="list-group border border-secondary">
+                    {this.state.weatherForcast.length > 0 && this.state.weatherForcast.map((weatherInfo, idx) => <WeatherDay idx={idx} weatherInfo={weatherInfo} />)};
+                </ul>
+
             </div>
         )
     }
